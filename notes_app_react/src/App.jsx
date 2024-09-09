@@ -25,6 +25,13 @@ const App = () => {
       <h1>Notes Application</h1>
       <NoteForm addNote={addNote} />
       <SearchNotes onSearch={handleSearch} />
+
+      {/* Display number of books and number of books being displayed */}
+      <div className="note-stats">
+        <p>Number of notes: {notes.length}</p>
+        <p>Displaying: {filteredNotes.length}</p>
+      </div>
+
       {filteredNotes.length > 0 && <NotesTable notes={filteredNotes} />}
     </div>
   );
